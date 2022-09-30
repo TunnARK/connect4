@@ -25,6 +25,7 @@ class Grid:
         ret += " " + "".join(str(i) for i in range(self.columns)) + "\n"
         return ret
 
+    # Place le jeton dans une colonne en le stoppant sur la premiere ligne libre (si elle existe)
     def place(self, column: int, cell: Cell) -> int:
         for line in range(self.lines):
             if self.grid[line][column] == Cell.EMPTY:
@@ -32,8 +33,9 @@ class Grid:
                 return line
         raise ValueError(f"Column {column} is full.")
 
+    # Verifier si 4 jetons sont alignees horizentalement, verticalement ou diagmt
     def win(self, line: int, column: int) -> bool:
-        adjacent = 0
+        adjacent = 0 # compteur
         color = self.grid[line][column]
         # Horizontal
         for cell in self.grid[line]:
@@ -48,12 +50,15 @@ class Grid:
         # TODO: Diagonal
         return False
 
+    # Condition d arret en cas de match nul
     def tie(self) -> bool:
         # TODO
+        # verifier si toutes les cases sont deja remplis
         return False
 
 
 class Player:
+    # fonction qui necessite de savoir l etat de la grille (donc en parametre)
     def play(self, grid: Grid) -> int:
         raise NotImplementedError
 
@@ -74,7 +79,7 @@ class Game:
                 print(self.grid)
                 print("Tie.")
                 break
-            if self.play(self.player_b, Cell.B):
+            if self.play(self.player_b, Cell.B): # Attention different de player.play
                 print(self.grid)
                 print("B wins !")
                 break
