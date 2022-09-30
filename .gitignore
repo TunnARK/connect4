@@ -1,0 +1,7 @@
+connect4/__pycache__/__init__.cpython-310.pyc
+connect4/__pycache__/game.cpython-310.pyc
+connect4/__pycache__/serde.cpython-310.pyc
+tests/__pycache__/__init__.cpython-310.pyc
+tests/__pycache__/test_cheater.cpython-310.pyc
+tests/__pycache__/test_game.cpython-310.pyc
+tests/__pycache__/test_serde.cpython-310.pyc
