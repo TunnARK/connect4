@@ -1,4 +1,7 @@
 from enum import Enum
+from random import randrange
+
+from sympy import true
 
 
 class Cell(Enum):
@@ -37,6 +40,7 @@ class Grid:
     def win(self, line: int, column: int) -> bool:
         adjacent = 0 # compteur
         color = self.grid[line][column]
+        
         # Horizontal
         for cell in self.grid[line]:
             if cell == color:
@@ -46,7 +50,16 @@ class Grid:
             else:
                 adjacent = 0
 
-        # TODO: Vertical
+        # Vertical
+        for c in range(self.columns):
+            for l in range(self.lines):
+                if self.grid[l][c] == color:
+                    adjacent += 1
+                    if adjacent == 4:
+                        return True
+                else:
+                    adjacent = 0
+            
         # TODO: Diagonal
         return False
 
