@@ -38,7 +38,7 @@ class TestGame(unittest.TestCase):
         self.assertTrue(grid.win(0, 0))
         self.assertFalse(grid.win(0, 6))
 
-    @unittest.skip
+    #@unittest.skip # commenter cette ligne pour la question Q2 du TP1
     def test_column_win(self):
         grid = Grid()
         for line in range(4):
