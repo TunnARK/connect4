@@ -58,7 +58,7 @@ class TestGame(unittest.TestCase):
         self.assertTrue(grid.win(0, 0))
         self.assertFalse(grid.win(0, 1))
 
-    @unittest.skip
+    #@unittest.skip # commenter cette ligne pour la question Q3 du TP1
     def test_tie(self):
         from connect4.dumb_ia import DumbIA
 
