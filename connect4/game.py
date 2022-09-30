@@ -65,9 +65,12 @@ class Grid:
 
     # Condition d arret en cas de match nul
     def tie(self) -> bool:
-        # TODO
         # verifier si toutes les cases sont deja remplis
-        return False
+        for c in range(self.columns):
+            for l in range(self.lines):
+                if self.grid[l][c] == Cell.EMPTY:
+                    return False
+        return True
 
 
 class Player:
