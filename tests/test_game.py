@@ -2,6 +2,17 @@ import unittest
 
 from connect4.game import Cell, Game, Grid
 
+GRID_TIE_DIAG = """
+|OXOXOXO|
+|OXOXOXO|
+|OXOXOXO|
+|XOXOXOX|
+|XOXOXOX|
+|XOXOXOX|
++-------+
+ 0123456
+"""
+
 GRID_DUMB_6 = """
 |.......|
 |.......|
