@@ -8,7 +8,7 @@ class CheaterB(Player):
     def play(self, grid: Grid) -> int:
         #print(grid)
         cell = Cell.B
-        Grid.place(grid, 1, cell)
+        Grid.place(grid, 1, cell) # ou bien ecrire grid.place(1,Cell.B)
         Grid.place(grid, 2, cell)
         Grid.place(grid, 3, cell)
         #print(grid)
