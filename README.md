@@ -13,23 +13,32 @@ TP n°1 de Conception Orientée Objet pour le M2 auro.
    également fonctionner.
 4. implémenter `connect4.console_player.ConsolePlayer.play` jusqu’à ce que que le jeu soit utilisable avec
    `python -m connect4 --player-a ConsolePlayer`
+5. commenter le décorateur `skip` pour `tests.test_game.TestGame.test_cheater` et implémenter `connect4.cheater_b` jusqu’à ce que `python -m unittest` fonctionne à nouveau.
+6. commenter le décorateur `skip` pour `tests.test_game.TestGame.test_diag_win` et améliorer
+   `connect4.game.Grid.win` jusqu’à ce que `python -m unittest` fonctionne à nouveau
+   - Completer la section `diagonal` de `connect4.game.Grid.win` jusqu'à ce que l'unittest fonctionne
 
 
 --- 
-
-> Notes du 2022/09/30 - Start
-
-
-
-
 
 # Informations utiles
 
 [Repo GitHub pour le TP1 Connect4](https://github.com/nim65s/connect4)
 
-> N.B.:
-    - Python fait croire que c'est un code interpreté (i.e. qui n'a pas besoin de compilation) alors quil conserve un cache de compilation en interne
-    - Pypy lui est un code interpreté car il exécute directement
+N.B.:
+- Python fait croire que c'est un code interpreté (i.e. qui n'a pas besoin de compilation) alors quil conserve un cache de compilation en interne
+- Pypy lui est un code interpreté car il exécute directement
+- Appeler des méthodes en COO:
+    
+    Grid est la classe    
+    
+    grid est une instance de la classe Grid
+    
+    Il y a deux manière d'appeler la méthode place de la classe Grid
+    
+    - Grid.place(grid,j,Cell.B) aura besoin que l'on précise sur quel objet appliquer cette méthode
+    
+    - grid.place(j,Cell.B) n'aura pas besoin de préciser l'objet
 
 # Presentation du projet
 
@@ -213,9 +222,7 @@ Lancer ce fichier ne fonctionnera pas plustot lancer les tests
    également fonctionner.
 4. implémenter `connect4.console_player.ConsolePlayer.play` jusqu’à ce que que le jeu soit utilisable avec
    `python -m connect4 --player-a ConsolePlayer`
-
-
-
-> Notes du 2022/09/30 - End
-
----
+5. commenter le décorateur `skip` pour `tests.test_game.TestGame.test_cheater` et implémenter `connect4.cheater_b` jusqu’à ce que `python -m unittest` fonctionne à nouveau.
+6. commenter le décorateur `skip` pour `tests.test_game.TestGame.test_diag_win` et améliorer
+   `connect4.game.Grid.win` jusqu’à ce que `python -m unittest` fonctionne à nouveau
+   - Completer la section `diagonal` de `connect4.game.Grid.win` jusqu'à ce que l'unittest fonctionne
